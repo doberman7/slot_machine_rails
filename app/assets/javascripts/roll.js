@@ -8,7 +8,9 @@ $(document).ready(function() {
     //event.defaultPrevented();
     event.preventDefault(); //deprecated use event.defaultPrevented() instead
 
-    //Load data from the server using a HTTP POST request.
+    //Load data from the server using a HTTP POST request
+    //usamos uns solcitud de get, ya post daba un error:
+     //ActionController::InvalidAuthenticityToken
     $.get('/rolls',function(data){
       //console.log(data);
       //en la vista index apuntar al id=die y traer el callback
