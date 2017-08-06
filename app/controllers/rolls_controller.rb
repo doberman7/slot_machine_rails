@@ -25,15 +25,15 @@ class RollsController < ApplicationController
     end
     #Se dejan solo los valores de cada Roll en el Ary, se eliminan los repetidos, y si al la cuenta de elementos dentro del Ary es 1, @win es "WINER"
     @win = "WINNER!!" if @rolls.map! { |roll| roll.value }.uniq.count == 1
-        
-    # if request.xhr?
-    #
-    #     # renderear :_die_roll, pero no layout:
-    #     render 'die_roll', layout: false
-    #   else
-    #
-    #     render 'index'
-    # end
-    render 'rolls/index'
+
+    if request.xhr?
+        # renderear vista parcial:_die_roll, pero no layout:
+        render '_die_roll', layout: false
+        p " ajax " * 50
+      else
+        render 'index'
+        p "no ajax " * 50
+    end
+    #render 'rolls/index'
   end
 end

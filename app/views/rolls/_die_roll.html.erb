@@ -1,3 +1,4 @@
+<!-- cada roll es un numero, que se convierte en un changuito -->
 <% @rolls.each_with_index do |value, index| %>
   <img src="/<%= value %>.png" title="<%= value %>" alt="the roll" id="image-<%= index + 1 %>">
 <% end %>
