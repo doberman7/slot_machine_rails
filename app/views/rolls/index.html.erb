@@ -5,9 +5,13 @@
 <h1>Slot Machine</h1>
 
 <div id="slot-machine">
-  <form id="formulario" method="get" action="/rolls">
+
+    <%= form_tag "/rolls", :id => "formulario" ,remote: true  do |f| %>
+      <%= submit_tag 'SPIN', :id => "submit" %>
+    <% end %>
+  <!-- <form id="formulario" method="post" action="/rolls">
     <input id="submit" type="submit" value="SPIN">
-  </form>
+  </form> -->
   <div id="die">
     <%= render 'die_roll' %>
   </div>
