@@ -11,7 +11,7 @@ $(document).ready(function() {
     //Load data from the server using a HTTP POST request
     //usamos uns solcitud de get, ya post daba un error:
      //ActionController::InvalidAuthenticityToken
-    $.get('/rolls',function(data){
+    $.post('/rolls',function(data){
       //console.log(data);
       //en la vista index apuntar al id=die y traer el callback
       /*DATA es algo asì, los numeros cambian aleatoriamente:
